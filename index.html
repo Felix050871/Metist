@@ -160,13 +160,24 @@
   .full-img-content { position: relative; z-index: 2; width: 100%; padding: 80px 40px; max-width: var(--max-w); margin: 0 auto; }
 
   /* ── SERVICE CARDS ── */
-  .service-card { padding: 36px 32px; border: 1px solid var(--border); border-radius: 4px; background: var(--white); transition: all 0.25s; position: relative; overflow: hidden; }
-  .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--blue); transition: width 0.3s; }
-  .service-card:hover { box-shadow: 0 8px 32px rgba(27,79,216,0.1); border-color: var(--blue-pale); transform: translateY(-2px); }
-  .service-card:hover::after { width: 100%; }
-  .service-card .icon { margin-bottom: 20px; color: var(--blue); }
-  .service-card h3 { margin-bottom: 12px; font-size: 1.05rem; }
-  .service-card p { font-size: 0.9rem; }
+  /* Servizi — griglia svizzera: filetto superiore, indice numerico, nessuna ombra */
+  .service-card { display: flex; flex-direction: column; padding: 32px 28px 28px; border: 1px solid var(--border); border-radius: 4px; background: var(--white); position: relative; overflow: hidden; text-decoration: none; color: inherit; transition: border-color 0.25s ease, background-color 0.25s ease; }
+  .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--blue); transition: width 0.3s ease; }
+  .service-card:hover, .service-card:focus-visible { border-color: var(--gray-400); background: var(--white); }
+  .service-card:hover::before, .service-card:focus-visible::before { width: 100%; }
+  .service-card:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+  .service-card .sc-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+  .service-card .icon { color: var(--blue); line-height: 0; }
+  .service-card .sc-num { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; color: var(--gray-600); font-variant-numeric: tabular-nums; transition: color 0.25s ease; }
+  .service-card:hover .sc-num, .service-card:focus-visible .sc-num { color: var(--blue); }
+  .service-card h3 { margin-bottom: 10px; font-size: 1.15rem; font-weight: 500; color: var(--navy); letter-spacing: -0.01em; }
+  .service-card p { font-size: 0.95rem; line-height: 1.6; color: var(--text-light); }
+  .service-card .sc-more { margin-top: auto; padding-top: 20px; font-size: 0.85rem; font-weight: 500; color: var(--blue); display: inline-flex; align-items: center; gap: 6px; }
+  .service-card .sc-more span { transition: transform 0.25s ease; }
+  .service-card:hover .sc-more span, .service-card:focus-visible .sc-more span { transform: translateX(4px); }
+  @media (prefers-reduced-motion: reduce) {
+    .service-card, .service-card::before, .service-card .sc-num, .service-card .sc-more span { transition: none; }
+  }
 
   /* ── VALUE PROPS ── */
   .vp-item { display: flex; gap: 24px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid var(--border); }
@@ -782,41 +793,73 @@
       <div class="section-intro" style="margin-bottom:48px;">
         <span class="eyebrow">Servizi</span>
         <h2>Competenze integrate per ogni fase del progetto</h2>
-        <p>Un portfolio completo per accompagnare le organizzazioni lungo tutto il ciclo di vita della trasformazione digitale.</p>
+        <p>Otto aree di competenza che lavorano insieme sullo stesso progetto: dalla scelta architetturale iniziale all'esercizio del sistema in produzione.</p>
       </div>
       <div class="grid-4">
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
-          <h3>Consulenza IT</h3><p>Advisory strategico, enterprise architecture e technology roadmap.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h7"/></svg></div>
-          <h3>System Integration</h3><p>Integrazione applicativa, API management e legacy modernization.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
-          <h3>Software Engineering</h3><p>Sviluppo custom, applicazioni enterprise e microservizi scalabili.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div>
-          <h3>Cloud &amp; Infrastructure</h3><p>Cloud migration, hybrid cloud design e managed infrastructure.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
-          <h3>Cybersecurity</h3><p>Security assessment, governance, compliance e security architecture.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
-          <h3>AI &amp; Data Analytics</h3><p>Intelligenza artificiale, data platform e machine learning enterprise.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
-          <h3>Blockchain</h3><p>Smart contract, DLT enterprise, tokenizzazione e architetture Web3.</p>
-        </div>
-        <div class="service-card">
-          <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg></div>
-          <h3>Digital Marketing</h3><p>SEO, performance marketing, analytics e digital transformation del brand.</p>
-        </div>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+            <span class="sc-num" aria-hidden="true">01</span>
+          </div>
+          <h3>Consulenza IT</h3><p>Definiamo architettura e roadmap tecnologica prima che diventino un vincolo. Advisory indipendente dal vendor.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h7"/></svg></div>
+            <span class="sc-num" aria-hidden="true">02</span>
+          </div>
+          <h3>System Integration</h3><p>Colleghiamo sistemi che non nascono per parlarsi: integrazione applicativa, API management e modernizzazione del legacy.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+            <span class="sc-num" aria-hidden="true">03</span>
+          </div>
+          <h3>Software Engineering</h3><p>Sviluppo su misura del dominio del cliente: applicazioni enterprise e architetture a microservizi che reggono la scala.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div>
+            <span class="sc-num" aria-hidden="true">04</span>
+          </div>
+          <h3>Cloud &amp; Infrastructure</h3><p>Migrazione e disegno di infrastrutture ibride, con gestione operativa continuativa dopo il go-live.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+            <span class="sc-num" aria-hidden="true">05</span>
+          </div>
+          <h3>Cybersecurity</h3><p>Assessment, governance e architetture di sicurezza per sistemi soggetti a vincoli normativi: GDPR, DORA, NIS2.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+            <span class="sc-num" aria-hidden="true">06</span>
+          </div>
+          <h3>AI &amp; Data Analytics</h3><p>Data platform e modelli di machine learning portati in produzione, non fermi alla fase sperimentale.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+            <span class="sc-num" aria-hidden="true">07</span>
+          </div>
+          <h3>Blockchain</h3><p>Smart contract, DLT enterprise e tokenizzazione, integrati con i sistemi gestionali già in esercizio.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
+        <a class="service-card" href="#servizi" onclick="showPage('servizi');return false;">
+          <div class="sc-top">
+            <div class="icon"><svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg></div>
+            <span class="sc-num" aria-hidden="true">08</span>
+          </div>
+          <h3>Digital Marketing</h3><p>SEO, performance marketing e analytics governati come un progetto tecnico, con KPI misurabili.</p>
+          <span class="sc-more">Approfondisci <span aria-hidden="true">&rarr;</span></span>
+        </a>
       </div>
     </div>
   </section>
