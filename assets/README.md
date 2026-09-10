@@ -12,8 +12,7 @@
 
 | File | Dove si usa |
 |---|---|
-| `metist-mt-print.svg` | **Marchio compatto per carta intestata, presentazioni e stampati.** Monogramma MT senza riquadro, in gradiente dal blu profondo al cyan come il marchio originale. Essendo SVG si importa in Illustrator, Word e PowerPoint e si scala a qualsiasi dimensione senza perdita. |
-| `metist-mt-gradient.png` | Stesso marchio in gradiente, rasterizzato a 600×340 RGBA. Serve per la **firma email**: Outlook su Windows non visualizza gli SVG, quindi lì l'SVG mostrerebbe un riquadro vuoto. |
+| `metist-mt-print.png` | **Marchio compatto per carta intestata, presentazioni e stampati.** 738×326 RGBA: a 300 dpi copre 62 mm di larghezza, sufficiente per qualsiasi uso su A4. |
 
 ## Non adottato
 
@@ -24,3 +23,5 @@
 ---
 
 Colori di riferimento: blu `#0A46AC`, accento cyan `#0098F0`. Ricavati misurando i pixel del logo originale (tinta 215-218°, saturazione 96-98%).
+
+**Il monogramma MT non è ridisegnato**: la M e la T sono ritagliate dal file del logo originale e ricomposte, così i tratti e il gradiente sono esattamente quelli del marchio. Per questo è disponibile solo come raster. Una versione vettoriale richiede il file sorgente del logo (.ai o .eps) di chi lo ha disegnato: chiedetelo prima di commissionare stampe di grande formato, come insegne o roll-up.
