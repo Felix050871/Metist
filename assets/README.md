@@ -12,7 +12,8 @@
 
 | File | Dove si usa |
 |---|---|
-| `metist-mt-print.png` | **Marchio compatto per carta intestata, presentazioni e stampati.** 738×326 RGBA: a 300 dpi copre 62 mm di larghezza, sufficiente per qualsiasi uso su A4. |
+| `metist-mt-print.png` | **Carta intestata, presentazioni e stampa a colori.** 738×326 RGBA: a 300 dpi copre 62 mm, abbondante per l'A4. Riproduce anche la sfumatura curva interna alla T. |
+| `metist-mt-vettoriale.svg` | **Insegne, grande formato, ricamo, incisione, tinta unica.** 752 byte, scalabile all'infinito. Ricavato tracciando i contorni del raster: la sagoma è esatta, ma la sfumatura curva dentro la T non c'è, perché è una variazione di colore interna e non un bordo. Per questi usi non serve comunque. |
 
 ## Non adottato
 
@@ -24,4 +25,6 @@
 
 Colori di riferimento: blu `#0A46AC`, accento cyan `#0098F0`. Ricavati misurando i pixel del logo originale (tinta 215-218°, saturazione 96-98%).
 
-**Il monogramma MT non è ridisegnato**: la M e la T sono ritagliate dal file del logo originale e ricomposte, così i tratti e il gradiente sono esattamente quelli del marchio. Per questo è disponibile solo come raster. Una versione vettoriale richiede il file sorgente del logo (.ai o .eps) di chi lo ha disegnato: chiedetelo prima di commissionare stampe di grande formato, come insegne o roll-up.
+**Il monogramma MT non è ridisegnato**: la M e la T sono ritagliate dal file del logo originale e ricomposte, così tratti, proporzioni e gradiente sono esattamente quelli del marchio.
+
+Esiste in due forme perché nessuna delle due copre tutti i casi. Il **raster** è fedele al 100%, compresa la sfumatura interna alla T, ma ha una risoluzione finita. Il **vettoriale**, ottenuto tracciando i contorni, scala all'infinito e riproduce la sagoma esattamente, ma appiattisce quella sfumatura interna. Per le lavorazioni che richiedono il vettoriale — insegne, ricamo, incisione, tinta unica — la sfumatura non sarebbe comunque riproducibile, quindi la perdita è teorica.

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 738 326" role="img" aria-label="MetisT">
+  <defs>
+    <linearGradient id="mt" x1="0" y1="326" x2="738" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0.000" stop-color="#00276A"/>
+      <stop offset="0.250" stop-color="#002E78"/>
+      <stop offset="0.500" stop-color="#003F99"/>
+      <stop offset="0.750" stop-color="#007DE2"/>
+      <stop offset="1.000" stop-color="#00CEFB"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#mt)" fill-rule="evenodd" d="M0 16L72 16L172 165L175 163L273 16L347 16L347 311L273 311L272 142L206 236L193 257L153 257L72 142L71 311L0 311L0 17Z M454 17L737 16L737 77L617 78L616 311L519 311L519 79L517 77L398 77L401 63L414 44L433 27L443 21L453 18Z"/>
+</svg>
