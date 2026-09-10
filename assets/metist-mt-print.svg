@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 14 60 34" role="img" aria-label="MetisT">
+  <g fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- M nel blu di marchio -->
+    <path d="M6 42 L6 20 L17 34 L28 20 L28 42" stroke="#0A46AC"/>
+    <!-- T nel cyan dell'accento -->
+    <path d="M36 20 L58 20" stroke="#0098F0"/>
+    <path d="M47 20 L47 42" stroke="#0098F0"/>
+  </g>
+</svg>
