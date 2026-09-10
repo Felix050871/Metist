@@ -13,7 +13,7 @@
 | File | Dove si usa |
 |---|---|
 | `metist-mt-print.png` | **Carta intestata, presentazioni e stampa a colori.** 738×326 RGBA: a 300 dpi copre 62 mm, abbondante per l'A4. Riproduce anche la sfumatura curva interna alla T. |
-| `metist-mt-vettoriale.svg` | **Insegne, grande formato, ricamo, incisione, tinta unica.** 752 byte, scalabile all'infinito. Ricavato tracciando i contorni del raster: la sagoma è esatta, ma la sfumatura curva dentro la T non c'è, perché è una variazione di colore interna e non un bordo. Per questi usi non serve comunque. |
+| `metist-mt-print.svg` | **Insegne, grande formato, ricamo, incisione, tinta unica.** 752 byte, scalabile all'infinito. Ricavato tracciando i contorni del raster: la sagoma è esatta, ma la sfumatura curva dentro la T non c'è, perché è una variazione di colore interna e non un bordo. Per questi usi non serve comunque. |
 
 ## Non adottato
 
