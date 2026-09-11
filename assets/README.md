@@ -28,3 +28,12 @@ Colori di riferimento: blu `#0A46AC`, accento cyan `#0098F0`. Ricavati misurando
 **Il monogramma MT non è ridisegnato**: la M e la T sono ritagliate dal file del logo originale e ricomposte, così tratti, proporzioni e gradiente sono esattamente quelli del marchio.
 
 Esiste in due forme perché nessuna delle due copre tutti i casi. Il **raster** è fedele al 100%, compresa la sfumatura interna alla T, ma ha una risoluzione finita. Il **vettoriale**, ottenuto tracciando i contorni, scala all'infinito e riproduce la sagoma esattamente, ma appiattisce quella sfumatura interna. Per le lavorazioni che richiedono il vettoriale — insegne, ricamo, incisione, tinta unica — la sfumatura non sarebbe comunque riproducibile, quindi la perdita è teorica.
+
+## Loghi tecnologici
+
+`tech/` contiene i 16 loghi della sezione "Stack tecnologico": SVG del pacchetto simple-icons 11.0.0 (licenza CC0 per il pacchetto), ricolorati nel blu di marchio `#0A46AC`.
+
+Sono ospitati qui invece che caricati da cdn.simpleicons.org perché quel CDN ha rimosso AWS e Azure, e i due riquadri mostravano un'immagine rotta. Ospitarli in locale elimina anche 16 richieste esterne a ogni caricamento.
+
+I marchi restano dei rispettivi titolari: AWS e Azure sono stati tolti da simple-icons su richiesta di Amazon e Microsoft. Se MetisT aderisce ai loro programmi partner, sostituite quei due file con i loghi ufficiali forniti dai programmi.
+

@@ -214,7 +214,7 @@
   .cta-band p { color: rgba(255,255,255,0.6); margin-bottom: 36px; font-size: 1.05rem; }
 
   /* ── TECH GRID ── */
-  .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 1px; background: var(--border); margin-top: 48px; }
+  .tech-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 1px; background: var(--border); margin-top: 48px; }
   .tech-item { background: var(--white); padding: 24px 16px; display: flex; flex-direction: column; align-items: center; gap: 10px; transition: background 0.2s; }
   .tech-item:hover { background: var(--blue-pale); }
   .tech-item img { width: 28px; height: 28px; object-fit: contain; filter: grayscale(1) opacity(0.5); transition: filter 0.2s; }
@@ -318,7 +318,7 @@
 
   /* ── FOOTER ── */
   footer { background: #041426; padding: 64px 0 32px; color: rgba(255,255,255,0.5); font-size: 0.85rem; }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+  .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1.2fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
   .footer-logo { margin-bottom: 0; display: flex; flex-direction: row; align-items: center; gap: 12px; }
   .footer-logo span { color: var(--blue); }
   .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.35); line-height: 1.6; margin-bottom: 0; }
@@ -893,6 +893,22 @@
     }
   }
 
+  /* Stack tecnologico: 16 voci su colonne che le dividono esattamente (8 / 4 / 2),
+     cosi' l'ultima riga e' sempre piena. Con auto-fill a 1440px uscivano 10
+     colonne e 4 caselle vuote, grigie perche' la griglia ha il fondo del bordo. */
+  @media (max-width: 900px) { .tech-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 480px) { .tech-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  /* Footer su schermi stretti: con 19 link in colonna singola diventava lunghissimo.
+     Colonne link a due a due con il marchio a tutta larghezza, e bersagli tattili
+     da 44px: impilati a 10px di distanza i link erano alti meno di 24px. */
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+    .footer-grid > div:first-child { grid-column: 1 / -1; }
+    .footer-col ul { gap: 0; }
+    .footer-col ul li a { display: inline-block; padding: 12px 0; line-height: 1.45; }
+  }
+
   /* ===== Rispetto delle preferenze di movimento ridotto ===== */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -1375,22 +1391,22 @@
         <p style="margin-top:12px;">Competenze certificate sulle principali piattaforme enterprise.</p>
       </div>
       <div class="tech-grid">
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/openjdk/0A46AC" alt="Java"><span>Java</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/spring/0A46AC" alt="Spring"><span>Spring Boot</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/react/0A46AC" alt="React"><span>React</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/nodedotjs/0A46AC" alt="Node"><span>Node.js</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/python/0A46AC" alt="Python"><span>Python</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/kubernetes/0A46AC" alt="K8s"><span>Kubernetes</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/docker/0A46AC" alt="Docker"><span>Docker</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/amazonaws/0A46AC" alt="AWS"><span>AWS</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/microsoftazure/0A46AC" alt="Azure"><span>Azure</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/googlecloud/0A46AC" alt="GCP"><span>Google Cloud</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/postgresql/0A46AC" alt="PostgreSQL"><span>PostgreSQL</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/mongodb/0A46AC" alt="MongoDB"><span>MongoDB</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/terraform/0A46AC" alt="Terraform"><span>Terraform</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/gitlab/0A46AC" alt="GitLab"><span>GitLab CI/CD</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/ethereum/0A46AC" alt="Ethereum"><span>Ethereum</span></div>
-        <div class="tech-item"><img src="https://cdn.simpleicons.org/graphql/0A46AC" alt="GraphQL"><span>GraphQL</span></div>
+        <div class="tech-item"><img src="assets/tech/openjdk.svg" width="28" height="28" loading="lazy" alt="Java"><span>Java</span></div>
+        <div class="tech-item"><img src="assets/tech/spring.svg" width="28" height="28" loading="lazy" alt="Spring"><span>Spring Boot</span></div>
+        <div class="tech-item"><img src="assets/tech/react.svg" width="28" height="28" loading="lazy" alt="React"><span>React</span></div>
+        <div class="tech-item"><img src="assets/tech/nodedotjs.svg" width="28" height="28" loading="lazy" alt="Node"><span>Node.js</span></div>
+        <div class="tech-item"><img src="assets/tech/python.svg" width="28" height="28" loading="lazy" alt="Python"><span>Python</span></div>
+        <div class="tech-item"><img src="assets/tech/kubernetes.svg" width="28" height="28" loading="lazy" alt="K8s"><span>Kubernetes</span></div>
+        <div class="tech-item"><img src="assets/tech/docker.svg" width="28" height="28" loading="lazy" alt="Docker"><span>Docker</span></div>
+        <div class="tech-item"><img src="assets/tech/amazonaws.svg" width="28" height="28" loading="lazy" alt="AWS"><span>AWS</span></div>
+        <div class="tech-item"><img src="assets/tech/microsoftazure.svg" width="28" height="28" loading="lazy" alt="Azure"><span>Azure</span></div>
+        <div class="tech-item"><img src="assets/tech/googlecloud.svg" width="28" height="28" loading="lazy" alt="GCP"><span>Google Cloud</span></div>
+        <div class="tech-item"><img src="assets/tech/postgresql.svg" width="28" height="28" loading="lazy" alt="PostgreSQL"><span>PostgreSQL</span></div>
+        <div class="tech-item"><img src="assets/tech/mongodb.svg" width="28" height="28" loading="lazy" alt="MongoDB"><span>MongoDB</span></div>
+        <div class="tech-item"><img src="assets/tech/terraform.svg" width="28" height="28" loading="lazy" alt="Terraform"><span>Terraform</span></div>
+        <div class="tech-item"><img src="assets/tech/gitlab.svg" width="28" height="28" loading="lazy" alt="GitLab"><span>GitLab CI/CD</span></div>
+        <div class="tech-item"><img src="assets/tech/ethereum.svg" width="28" height="28" loading="lazy" alt="Ethereum"><span>Ethereum</span></div>
+        <div class="tech-item"><img src="assets/tech/graphql.svg" width="28" height="28" loading="lazy" alt="GraphQL"><span>GraphQL</span></div>
       </div>
     </div>
   </section>
@@ -1408,13 +1424,54 @@
     <div class="container">
       <div class="footer-grid">
         <div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>
-        <div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li><li><a onclick="showPage('approccio')">Approccio</a></li><li><a onclick="showPage('careers')">Careers</a></li></ul></div>
-        <div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li><li><a onclick="showPage('servizi')">Blockchain</a></li><li><a onclick="showPage('servizi')">Digital Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Contatti</h4><ul><li><a onclick="showPage('contatti')">Richiedi un incontro</a></li><li><a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></li><li><a onclick="showPage('insights')">Insights</a></li></ul></div>
+                <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a><br>Altre sedi: Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)</div>
-        <div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
+        <div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div>
+        <div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
       </div>
     </div>
   </footer>
@@ -1462,7 +1519,51 @@
     </div>
   </section>
   <div class="cta-band"><div class="container"><h2>Parla con il nostro team</h2><p>Raccontaci il tuo progetto.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Richiedi un incontro</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li><li><a onclick="showPage('approccio')">Approccio</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ GRUPPO ═══ -->
@@ -1607,7 +1708,51 @@
     </div>
   </section>
   <div class="cta-band"><div class="container"><h2>Parla con il nostro team</h2><p>Scopri come possiamo supportare la tua organizzazione.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Richiedi un incontro</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ SERVIZI ═══ -->
@@ -1749,7 +1894,51 @@
   </div>
 
   <div class="cta-band"><div class="container"><h2>Parla con il nostro team</h2><p>Scopri come i nostri servizi possono rispondere alle esigenze del tuo progetto.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Richiedi un incontro</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">Blockchain</a></li><li><a onclick="showPage('servizi')">Digital Marketing</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ SOLUZIONI ═══ -->
@@ -1779,7 +1968,51 @@
     </div>
   </section>
   <div class="cta-band"><div class="container"><h2>Parla con il nostro team</h2><p>Ogni organizzazione ha esigenze specifiche. Parliamone.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Richiedi un incontro</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">Blockchain</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ SETTORI ═══ -->
@@ -1853,7 +2086,51 @@
     </div>
   </section>
   <div class="cta-band"><div class="container"><h2>Parla con il nostro team</h2><p>Scopri le nostre competenze nel tuo settore.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Richiedi un incontro</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ APPROCCIO ═══ -->
@@ -1876,7 +2153,51 @@
     </div>
   </section>
   <div class="cta-band"><div class="container"><h2>Parla con il nostro team</h2><p>Scopri come applichiamo il nostro metodo al tuo progetto.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Richiedi un incontro</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ INSIGHTS ═══ -->
@@ -1903,7 +2224,51 @@
     </div>
   </section>
   <div class="cta-band"><div class="container"><h2>Parla con il nostro team</h2><p>Approfondisci questi temi con i nostri esperti.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Richiedi un incontro</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">Blockchain</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ CAREERS ═══ -->
@@ -1940,7 +2305,51 @@
     </div>
   </section>
   <div class="cta-band"><div class="container"><h2>Non trovi la posizione adatta?</h2><p>Invia una candidatura spontanea: valutiamo sempre i profili interessanti.</p><button class="btn btn-white-outline" onclick="showPage('contatti')">Candidatura spontanea</button></div></div>
-  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div><div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li></ul></div><div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li></ul></div><div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div></div><div class="footer-bottom"><div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></div><div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>        <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div><div class="footer-bottom"><div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div><div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div></div></div></footer>
 </main>
 
 <!-- ═══════════════════════════════════════════ CONTATTI ═══ -->
@@ -1989,9 +2398,45 @@
     <div class="container">
       <div class="footer-grid">
         <div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>
-        <div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li><li><a onclick="showPage('approccio')">Approccio</a></li><li><a onclick="showPage('careers')">Careers</a></li></ul></div>
-        <div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li><li><a onclick="showPage('servizi')">Blockchain</a></li><li><a onclick="showPage('servizi')">Digital Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Contatti</h4><ul><li><a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a></li><li><a onclick="showPage('insights')">Insights</a></li></ul></div>
+                <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <div class="footer-legal">
@@ -2000,7 +2445,7 @@
           Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
           PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
         </div>
-        <div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
+        <div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
       </div>
     </div>
   </footer>
@@ -2109,7 +2554,7 @@
         <div style="display:grid;gap:2px;">
           <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Dati di navigazione</strong><p style="font-size:0.88rem;margin:0;">Indirizzo IP, tipo di browser, sistema operativo, URL di provenienza, pagine visitate, orari di accesso. Raccolti automaticamente per garantire la sicurezza e il corretto funzionamento del sito.</p></div>
           <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Dati forniti volontariamente</strong><p style="font-size:0.88rem;margin:0;">Nome, cognome, indirizzo email, azienda e qualsiasi informazione inserita nei form di contatto.</p></div>
-          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Cookie</strong><p style="font-size:0.88rem;margin:0;">Si rimanda all'apposita <a onclick="showPage('cookie')" style="color:var(--blue);cursor:pointer;">Cookie Policy</a>.</p></div>
+          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Cookie</strong><p style="font-size:0.88rem;margin:0;">Si rimanda all'apposita <a href="#cookie" onclick="showPage('cookie');return false;" style="color:var(--blue);cursor:pointer;">Cookie Policy</a>.</p></div>
         </div>
       </div>
       <div style="margin-bottom:48px;">
@@ -2150,13 +2595,54 @@
     <div class="container">
       <div class="footer-grid">
         <div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>
-        <div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li><li><a onclick="showPage('approccio')">Approccio</a></li><li><a onclick="showPage('careers')">Careers</a></li></ul></div>
-        <div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li><li><a onclick="showPage('servizi')">Blockchain</a></li><li><a onclick="showPage('servizi')">Digital Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div>
+                <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a><br>Altre sedi: Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)</div>
-        <div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
+        <div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div>
+        <div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
       </div>
     </div>
   </footer>
@@ -2231,7 +2717,7 @@
         </div>
       </div>
       <div style="padding:28px 32px;background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:0 4px 4px 0;">
-        <p style="font-size:0.88rem;color:var(--navy);margin:0;"><strong>Ultimo aggiornamento:</strong> 1° gennaio 2025. Per ulteriori informazioni consulta la <a onclick="showPage('privacy')" style="color:var(--blue);cursor:pointer;text-decoration:underline;">Privacy Policy</a>.</p>
+        <p style="font-size:0.88rem;color:var(--navy);margin:0;"><strong>Ultimo aggiornamento:</strong> 1° gennaio 2025. Per ulteriori informazioni consulta la <a href="#privacy" onclick="showPage('privacy');return false;" style="color:var(--blue);cursor:pointer;text-decoration:underline;">Privacy Policy</a>.</p>
       </div>
     </div>
   </section>
@@ -2239,13 +2725,54 @@
     <div class="container">
       <div class="footer-grid">
         <div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>
-        <div class="footer-col"><h4>Società</h4><ul><li><a onclick="showPage('chi-siamo')">Chi siamo</a></li><li><a onclick="showPage('gruppo')">Gruppo</a></li><li><a onclick="showPage('approccio')">Approccio</a></li><li><a onclick="showPage('careers')">Careers</a></li></ul></div>
-        <div class="footer-col"><h4>Servizi</h4><ul><li><a onclick="showPage('servizi')">Consulenza IT</a></li><li><a onclick="showPage('servizi')">System Integration</a></li><li><a onclick="showPage('servizi')">Blockchain</a></li><li><a onclick="showPage('servizi')">Digital Marketing</a></li></ul></div>
-        <div class="footer-col"><h4>Legale</h4><ul><li><a onclick="showPage('contatti')">Contatti</a></li><li><a onclick="showPage('insights')">Insights</a></li><li><a onclick="showPage('privacy')">Privacy Policy</a></li><li><a onclick="showPage('cookie')">Cookie Policy</a></li></ul></div>
+                <div class="footer-col">
+          <h4>Società</h4>
+          <ul>
+            <li><a href="#chi-siamo" onclick="showPage('chi-siamo');return false;">Chi siamo</a></li>
+            <li><a href="#gruppo" onclick="showPage('gruppo');return false;">Gruppo</a></li>
+            <li><a href="#approccio" onclick="showPage('approccio');return false;">Approccio</a></li>
+            <li><a href="#posizionamento" onclick="showPage('posizionamento');return false;">Posizionamento</a></li>
+            <li><a href="#insights" onclick="showPage('insights');return false;">Insights</a></li>
+            <li><a href="#careers" onclick="showPage('careers');return false;">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Consulenza IT</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">System Integration</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Software Engineering</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cloud &amp; Infrastructure</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Cybersecurity</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">AI &amp; Data Analytics</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Blockchain</a></li>
+            <li><a href="#servizi" onclick="showPage('servizi');return false;">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Mercati</h4>
+          <ul>
+            <li><a href="#soluzioni" onclick="showPage('soluzioni');return false;">Soluzioni</a></li>
+            <li><a href="#settori" onclick="showPage('settori');return false;">Settori</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="#contatti" onclick="showPage('contatti');return false;">Contattaci</a></li>
+            <li><a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a></li>
+            <li><a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a></li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
-        <div class="footer-legal"><strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>Sede legale: Via di Settebagni, 390 — 00138 Roma &nbsp;|&nbsp; PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a><br>Altre sedi: Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)</div>
-        <div class="footer-copy">© 2025 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a onclick="showPage('privacy')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a onclick="showPage('cookie')" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
+        <div class="footer-legal">
+          <strong>Metis Technology S.p.A.</strong> — P. IVA: 13354331004 — REA: RM - 1440940 — Capitale Sociale: € 300.000<br>
+          Sede legale: Via di Settebagni, 390 — 00138 Roma<br>
+          Sedi operative: Roma (RM) — Venezia (VE) — Napoli (NA) — Bologna (BO) — Milano (MI)<br>
+          PEC: <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>
+        </div>
+        <div class="footer-copy">© 2026 MetisT — Metis Technology S.p.A. &nbsp;·&nbsp; <a href="#privacy" onclick="showPage('privacy');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Privacy Policy</a> &nbsp;·&nbsp; <a href="#cookie" onclick="showPage('cookie');return false;" style="color:rgba(255,255,255,0.78);cursor:pointer;">Cookie Policy</a></div>
       </div>
     </div>
   </footer>
