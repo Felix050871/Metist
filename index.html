@@ -18,9 +18,123 @@
 <meta property="og:image:alt" content="MetisT — Metis Technology SpA, Gruppo ATMH">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/dm-sans-normal-latin-b9df62.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/dm-serif-display-normal-latin-f5a250.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Font ospitati sul sito: nessuna richiesta a Google, quindi nessun IP trasmesso a terzi */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-italic-latin-ext-f4c44c.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-italic-latin-27acdf.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-ext-33d679.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-b9df62.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-ext-33d679.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-b9df62.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-ext-33d679.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-b9df62.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-ext-33d679.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/dm-sans-normal-latin-b9df62.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-serif-display-italic-latin-ext-032937.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-serif-display-italic-latin-388236.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-serif-display-normal-latin-ext-108856.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-serif-display-normal-latin-f5a250.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 <style>
   :root {
     --navy: #06182F;
@@ -909,6 +1023,24 @@
     .footer-col ul li a { display: inline-block; padding: 12px 0; line-height: 1.45; }
   }
 
+  /* Modulo contatti: trappola anti-bot fuori schermo, messaggi di stato, campi non validi */
+  .cf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .cf-stato { margin-top: 12px; font-size: 0.9rem; line-height: 1.5; min-height: 1.5em; }
+  .cf-stato.ok  { color: #0B6B3A; }
+  .cf-stato.err { color: #B42318; }
+  .form-input[aria-invalid="true"] { border-color: #B42318; }
+
+  /* Pagine legali */
+  .legal h2 { font-size: 1.6rem; margin-bottom: 16px; }
+  .legal-sec { margin-bottom: 48px; }
+  .legal-sec p + p { margin-top: 12px; }
+  .legal-grid { display: grid; gap: 2px; }
+  .legal-card { padding: 24px 28px; background: var(--gray-50); border-left: 3px solid var(--blue); }
+  .legal-card strong { color: var(--navy); display: block; margin-bottom: 6px; }
+  .legal-card p { font-size: 0.92rem; margin: 0; }
+  .legal a { color: var(--blue); }
+  .legal-agg { font-size: 0.85rem; color: var(--text-light); }
+
   /* ===== Rispetto delle preferenze di movimento ridotto ===== */
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -1012,7 +1144,7 @@
   <!-- CHI SIAMO SPLIT -->
   <div class="split">
     <div class="split-img">
-      <img src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=900&auto=format&fit=crop&q=80" alt="Sessione di lavoro nella sede MetisT">
+      <img loading="lazy" decoding="async" src="assets/img/photo-1541746972996-4e0b0f43e02a-w900.jpg" alt="Sessione di lavoro nella sede MetisT">
       <div class="split-img-overlay"></div>
     </div>
     <div class="split-body on-white">
@@ -1193,7 +1325,7 @@
   <!-- BLOCKCHAIN SPLIT -->
   <div class="split reverse">
     <div class="split-img">
-      <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=900&auto=format&fit=crop&q=80" alt="Blockchain technology">
+      <img loading="lazy" decoding="async" src="assets/img/photo-1639762681485-074b7f938ba0-w900.jpg" alt="Blockchain technology">
       <div class="split-img-overlay"></div>
     </div>
     <div class="split-body on-navy">
@@ -1215,7 +1347,7 @@
   <!-- DIGITAL MARKETING SPLIT -->
   <div class="split">
     <div class="split-img">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=80" alt="Digital Marketing">
+      <img loading="lazy" decoding="async" src="assets/img/photo-1551288049-bebda4e38f71-w900.jpg" alt="Digital Marketing">
       <div class="split-img-overlay"></div>
     </div>
     <div class="split-body on-gray">
@@ -1272,7 +1404,7 @@
 
   <!-- CYBERSECURITY FULL WIDTH -->
   <div class="full-img-section">
-    <div class="full-img-section-bg"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1800&auto=format&fit=crop&q=80" alt="Cybersecurity"></div>
+    <div class="full-img-section-bg"><img loading="lazy" decoding="async" src="assets/img/photo-1558494949-ef010cbdcc31-w1800.jpg" alt="Cybersecurity"></div>
     <div class="full-img-overlay" style="background:linear-gradient(135deg,rgba(6,24,47,0.92) 0%,rgba(12,42,85,0.80) 100%);"></div>
     <div class="full-img-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Cybersecurity</span>
@@ -1309,7 +1441,7 @@
     </div>
     <div class="sectors-grid-img">
         <div class="sector-img-card">
-          <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&auto=format&fit=crop&q=80" alt="Financial Services">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1590283603385-17ffb3a7f29f-w800.jpg" alt="Financial Services">
           <div class="sector-img-overlay"></div>
           <div class="sector-img-body">
             <span class="sector-img-tag">Settore</span>
@@ -1318,7 +1450,7 @@
           </div>
         </div>
         <div class="sector-img-card">
-          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&auto=format&fit=crop&q=80" alt="Telco">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1544197150-b99a580bb7a8-w800.jpg" alt="Telco">
           <div class="sector-img-overlay"></div>
           <div class="sector-img-body">
             <span class="sector-img-tag">Settore</span>
@@ -1327,7 +1459,7 @@
           </div>
         </div>
         <div class="sector-img-card">
-          <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&auto=format&fit=crop&q=80" alt="Pubblica Amministrazione">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1529107386315-e1a2ed48a620-w800.jpg" alt="Pubblica Amministrazione">
           <div class="sector-img-overlay"></div>
           <div class="sector-img-body">
             <span class="sector-img-tag">Settore</span>
@@ -1336,7 +1468,7 @@
           </div>
         </div>
         <div class="sector-img-card">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80" alt="Industriale">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1581091226825-a6a2a5aee158-w800.jpg" alt="Industriale">
           <div class="sector-img-overlay"></div>
           <div class="sector-img-body">
             <span class="sector-img-tag">Settore</span>
@@ -1345,7 +1477,7 @@
           </div>
         </div>
         <div class="sector-img-card">
-          <img src="https://images.unsplash.com/photo-1509390144018-eeaf65052242?w=800&auto=format&fit=crop&q=80" alt="Utilities">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1509390144018-eeaf65052242-w800.jpg" alt="Utilities">
           <div class="sector-img-overlay"></div>
           <div class="sector-img-body">
             <span class="sector-img-tag">Settore</span>
@@ -1354,7 +1486,7 @@
           </div>
         </div>
         <div class="sector-img-card">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80" alt="Technology">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1518770660439-4636190af475-w800.jpg" alt="Technology">
           <div class="sector-img-overlay"></div>
           <div class="sector-img-body">
             <span class="sector-img-tag">Settore</span>
@@ -1480,7 +1612,7 @@
 <!-- ═══════════════════════════════════════════ CHI SIAMO ═══ -->
 <main id="page-chi-siamo" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&auto=format&fit=crop&q=80" alt="Team"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1522202176988-66273c2fd55f-w1400.jpg" alt="Team"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Chi siamo</span>
@@ -1569,7 +1701,7 @@
 <!-- ═══════════════════════════════════════════ GRUPPO ═══ -->
 <main id="page-gruppo" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&auto=format&fit=crop&q=80" alt="Corporate"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1553877522-43269d4ea984-w1400.jpg" alt="Corporate"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Il Gruppo</span>
@@ -1758,7 +1890,7 @@
 <!-- ═══════════════════════════════════════════ SERVIZI ═══ -->
 <main id="page-servizi" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&auto=format&fit=crop&q=80" alt="Technology services"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1518770660439-4636190af475-w1400.jpg" alt="Technology services"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Servizi</span>
@@ -1769,7 +1901,7 @@
 
   <!-- CONSULTING SPLIT -->
   <div class="split">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&auto=format&fit=crop&q=80" alt="IT Consulting"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1497366216548-37526070297c-w900.jpg" alt="IT Consulting"><div class="split-img-overlay"></div></div>
     <div class="split-body on-white">
       <span class="eyebrow">01</span>
       <h2>Consulenza IT</h2>
@@ -1781,7 +1913,7 @@
   </div>
 
   <div class="split reverse">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&auto=format&fit=crop&q=80" alt="System Integration"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1558494949-ef010cbdcc31-w900.jpg" alt="System Integration"><div class="split-img-overlay"></div></div>
     <div class="split-body on-gray">
       <span class="eyebrow">02</span>
       <h2>System Integration</h2>
@@ -1793,7 +1925,7 @@
   </div>
 
   <div class="split">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&auto=format&fit=crop&q=80" alt="Software Engineering"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1461749280684-dccba630e2f6-w900.jpg" alt="Software Engineering"><div class="split-img-overlay"></div></div>
     <div class="split-body on-white">
       <span class="eyebrow">03</span>
       <h2>Software Engineering</h2>
@@ -1805,7 +1937,7 @@
   </div>
 
   <div class="split reverse">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=900&auto=format&fit=crop&q=80" alt="Cloud Infrastructure"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1667372393119-3d4c48d07fc9-w900.jpg" alt="Cloud Infrastructure"><div class="split-img-overlay"></div></div>
     <div class="split-body on-gray">
       <span class="eyebrow">04</span>
       <h2>Cloud &amp; Infrastructure</h2>
@@ -1818,7 +1950,7 @@
 
   <!-- CYBERSECURITY FULL -->
   <div class="full-img-section">
-    <div class="full-img-section-bg"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1800&auto=format&fit=crop&q=80" alt="Cybersecurity"></div>
+    <div class="full-img-section-bg"><img loading="lazy" decoding="async" src="assets/img/photo-1558494949-ef010cbdcc31-w1800.jpg" alt="Cybersecurity"></div>
     <div class="full-img-overlay" style="background:linear-gradient(135deg,rgba(6,24,47,0.93) 0%,rgba(12,42,85,0.82) 100%);"></div>
     <div class="full-img-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">05 — Cybersecurity</span>
@@ -1834,7 +1966,7 @@
   </div>
 
   <div class="split">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=80" alt="AI Data"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1551288049-bebda4e38f71-w900.jpg" alt="AI Data"><div class="split-img-overlay"></div></div>
     <div class="split-body on-white">
       <span class="eyebrow">06</span>
       <h2>AI &amp; Data Analytics</h2>
@@ -1847,7 +1979,7 @@
 
   <!-- BLOCKCHAIN SPLIT -->
   <div class="split reverse">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=900&auto=format&fit=crop&q=80" alt="Blockchain"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1639762681485-074b7f938ba0-w900.jpg" alt="Blockchain"><div class="split-img-overlay"></div></div>
     <div class="split-body on-navy">
       <span class="eyebrow">07 — Blockchain &amp; Web3</span>
       <h2>Infrastrutture digitali trustless per l'enterprise</h2>
@@ -1865,7 +1997,7 @@
 
   <!-- DIGITAL MARKETING SPLIT -->
   <div class="split">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=80" alt="Digital Marketing"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1551288049-bebda4e38f71-w900.jpg" alt="Digital Marketing"><div class="split-img-overlay"></div></div>
     <div class="split-body on-white">
       <span class="eyebrow">08 — Digital Marketing</span>
       <h2>Strategia digitale e crescita misurata</h2>
@@ -1882,7 +2014,7 @@
   </div>
 
   <div class="split reverse">
-    <div class="split-img"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&auto=format&fit=crop&q=80" alt="Managed Services"><div class="split-img-overlay"></div></div>
+    <div class="split-img"><img loading="lazy" decoding="async" src="assets/img/photo-1556742049-0cfed4f6a45d-w900.jpg" alt="Managed Services"><div class="split-img-overlay"></div></div>
     <div class="split-body on-gray">
       <span class="eyebrow">09</span>
       <h2>Managed Services</h2>
@@ -1944,7 +2076,7 @@
 <!-- ═══════════════════════════════════════════ SOLUZIONI ═══ -->
 <main id="page-soluzioni" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&auto=format&fit=crop&q=80" alt="Solutions"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1518770660439-4636190af475-w1400.jpg" alt="Solutions"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Soluzioni</span>
@@ -2018,7 +2150,7 @@
 <!-- ═══════════════════════════════════════════ SETTORI ═══ -->
 <main id="page-settori" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&auto=format&fit=crop&q=80" alt="Industries"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1486406146926-c627a92ad1ab-w1400.jpg" alt="Industries"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Settori</span>
@@ -2029,7 +2161,7 @@
   <section style="padding-top:80px;padding-bottom:0;">
     <div class="settori-page-grid">
         <div class="settore-img-card">
-          <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=900&auto=format&fit=crop&q=80" alt="Financial Services">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1590283603385-17ffb3a7f29f-w900.jpg" alt="Financial Services">
           <div class="settore-img-overlay"></div>
           <div class="settore-img-body">
             <span class="settore-img-tag">Financial Services</span>
@@ -2038,7 +2170,7 @@
           </div>
         </div>
         <div class="settore-img-card">
-          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&auto=format&fit=crop&q=80" alt="Telco">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1544197150-b99a580bb7a8-w900.jpg" alt="Telco">
           <div class="settore-img-overlay"></div>
           <div class="settore-img-body">
             <span class="settore-img-tag">Telco</span>
@@ -2047,7 +2179,7 @@
           </div>
         </div>
         <div class="settore-img-card">
-          <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=900&auto=format&fit=crop&q=80" alt="Pubblica Amministrazione">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1529107386315-e1a2ed48a620-w900.jpg" alt="Pubblica Amministrazione">
           <div class="settore-img-overlay"></div>
           <div class="settore-img-body">
             <span class="settore-img-tag">Pubblica Amministrazione</span>
@@ -2056,7 +2188,7 @@
           </div>
         </div>
         <div class="settore-img-card">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&auto=format&fit=crop&q=80" alt="Industriale">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1581091226825-a6a2a5aee158-w900.jpg" alt="Industriale">
           <div class="settore-img-overlay"></div>
           <div class="settore-img-body">
             <span class="settore-img-tag">Industriale</span>
@@ -2065,7 +2197,7 @@
           </div>
         </div>
         <div class="settore-img-card">
-          <img src="https://images.unsplash.com/photo-1509390144018-eeaf65052242?w=900&auto=format&fit=crop&q=80" alt="Utilities">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1509390144018-eeaf65052242-w900.jpg" alt="Utilities">
           <div class="settore-img-overlay"></div>
           <div class="settore-img-body">
             <span class="settore-img-tag">Utilities</span>
@@ -2074,7 +2206,7 @@
           </div>
         </div>
         <div class="settore-img-card">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&auto=format&fit=crop&q=80" alt="Technology">
+          <img loading="lazy" decoding="async" src="assets/img/photo-1518770660439-4636190af475-w900.jpg" alt="Technology">
           <div class="settore-img-overlay"></div>
           <div class="settore-img-body">
             <span class="settore-img-tag">Technology</span>
@@ -2136,7 +2268,7 @@
 <!-- ═══════════════════════════════════════════ APPROCCIO ═══ -->
 <main id="page-approccio" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1400&auto=format&fit=crop&q=80" alt="Approccio"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1507003211169-0a1dd7228f2d-w1400.jpg" alt="Approccio"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Approccio</span>
@@ -2203,7 +2335,7 @@
 <!-- ═══════════════════════════════════════════ INSIGHTS ═══ -->
 <main id="page-insights" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1400&auto=format&fit=crop&q=80" alt="Insights"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1499750310107-5fef28a66643-w1400.jpg" alt="Insights"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Insights</span>
@@ -2214,12 +2346,12 @@
   <section class="section">
     <div class="container">
       <div class="grid-3">
-        <div class="insight-card"><div class="insight-thumb"><img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&auto=format&fit=crop&q=80" alt="AI"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Artificial Intelligence — Maggio 2025</div><h3>GenAI in contesti enterprise: considerazioni architetturali per il deployment su scala</h3><p>Un'analisi delle sfide e delle scelte architetturali critiche nell'adozione di modelli di linguaggio in ambienti enterprise regolamentati.</p></div></div>
-        <div class="insight-card"><div class="insight-thumb"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80" alt="SI"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">System Integration — Aprile 2025</div><h3>API-first e modernizzazione legacy: un approccio incrementale per organizzazioni complesse</h3><p>Come strutturare un percorso graduale di modernizzazione dei sistemi legacy senza interrompere la continuità operativa.</p></div></div>
-        <div class="insight-card"><div class="insight-thumb"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80" alt="Security"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Cybersecurity — Marzo 2025</div><h3>DORA e la resilienza operativa digitale: implicazioni per il settore finanziario italiano</h3><p>Un'analisi degli obblighi introdotti dal Digital Operational Resilience Act e delle implicazioni pratiche per banche e assicurazioni.</p></div></div>
-        <div class="insight-card"><div class="insight-thumb"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600&auto=format&fit=crop&q=80" alt="Blockchain"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Blockchain — Febbraio 2025</div><h3>Tokenizzazione degli asset reali: opportunità e vincoli per le organizzazioni enterprise</h3><p>Come la tokenizzazione sta ridefinendo il concetto di proprietà e trasferibilità degli asset in settori come il real estate e il finance.</p></div></div>
-        <div class="insight-card"><div class="insight-thumb"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" alt="Digital Marketing"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Digital Marketing — Gennaio 2025</div><h3>Marketing B2B nell'era dell'AI: come ridisegnare il funnel di acquisizione enterprise</h3><p>L'intelligenza artificiale sta trasformando i processi di demand generation e lead nurturing nel B2B. Strategie e casi pratici.</p></div></div>
-        <div class="insight-card"><div class="insight-thumb"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format&fit=crop&q=80" alt="Data"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Data &amp; Analytics — Dicembre 2024</div><h3>Data mesh nelle organizzazioni enterprise: oltre il data lake centralizzato</h3><p>Come il paradigma del data mesh sta ridisegnando la governance dei dati nelle grandi organizzazioni.</p></div></div>
+        <div class="insight-card"><div class="insight-thumb"><img loading="lazy" decoding="async" src="assets/img/photo-1677442135703-1787eea5ce01-w600.jpg" alt="AI"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Artificial Intelligence — Maggio 2025</div><h3>GenAI in contesti enterprise: considerazioni architetturali per il deployment su scala</h3><p>Un'analisi delle sfide e delle scelte architetturali critiche nell'adozione di modelli di linguaggio in ambienti enterprise regolamentati.</p></div></div>
+        <div class="insight-card"><div class="insight-thumb"><img loading="lazy" decoding="async" src="assets/img/photo-1558494949-ef010cbdcc31-w600.jpg" alt="SI"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">System Integration — Aprile 2025</div><h3>API-first e modernizzazione legacy: un approccio incrementale per organizzazioni complesse</h3><p>Come strutturare un percorso graduale di modernizzazione dei sistemi legacy senza interrompere la continuità operativa.</p></div></div>
+        <div class="insight-card"><div class="insight-thumb"><img loading="lazy" decoding="async" src="assets/img/photo-1558494949-ef010cbdcc31-w600.jpg" alt="Security"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Cybersecurity — Marzo 2025</div><h3>DORA e la resilienza operativa digitale: implicazioni per il settore finanziario italiano</h3><p>Un'analisi degli obblighi introdotti dal Digital Operational Resilience Act e delle implicazioni pratiche per banche e assicurazioni.</p></div></div>
+        <div class="insight-card"><div class="insight-thumb"><img loading="lazy" decoding="async" src="assets/img/photo-1639762681485-074b7f938ba0-w600.jpg" alt="Blockchain"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Blockchain — Febbraio 2025</div><h3>Tokenizzazione degli asset reali: opportunità e vincoli per le organizzazioni enterprise</h3><p>Come la tokenizzazione sta ridefinendo il concetto di proprietà e trasferibilità degli asset in settori come il real estate e il finance.</p></div></div>
+        <div class="insight-card"><div class="insight-thumb"><img loading="lazy" decoding="async" src="assets/img/photo-1551288049-bebda4e38f71-w600.jpg" alt="Digital Marketing"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Digital Marketing — Gennaio 2025</div><h3>Marketing B2B nell'era dell'AI: come ridisegnare il funnel di acquisizione enterprise</h3><p>L'intelligenza artificiale sta trasformando i processi di demand generation e lead nurturing nel B2B. Strategie e casi pratici.</p></div></div>
+        <div class="insight-card"><div class="insight-thumb"><img loading="lazy" decoding="async" src="assets/img/photo-1551288049-bebda4e38f71-w600.jpg" alt="Data"><div class="insight-thumb-overlay"></div></div><div class="insight-body"><div class="insight-meta">Data &amp; Analytics — Dicembre 2024</div><h3>Data mesh nelle organizzazioni enterprise: oltre il data lake centralizzato</h3><p>Come il paradigma del data mesh sta ridisegnando la governance dei dati nelle grandi organizzazioni.</p></div></div>
       </div>
     </div>
   </section>
@@ -2274,7 +2406,7 @@
 <!-- ═══════════════════════════════════════════ CAREERS ═══ -->
 <main id="page-careers" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&auto=format&fit=crop&q=80" alt="Careers"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1522202176988-66273c2fd55f-w1400.jpg" alt="Careers"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Careers</span>
@@ -2355,7 +2487,7 @@
 <!-- ═══════════════════════════════════════════ CONTATTI ═══ -->
 <main id="page-contatti" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&auto=format&fit=crop&q=80" alt="Contact"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1497366216548-37526070297c-w1400.jpg" alt="Contact"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Contatti</span>
@@ -2367,16 +2499,21 @@
     <div class="container">
       <div class="grid-2" style="align-items:start;">
         <div>
+          <form id="contact-form" novalidate>
           <div class="form-row">
-            <div class="form-group"><label class="form-label">Nome *</label><input type="text" class="form-input" placeholder="Mario"></div>
-            <div class="form-group"><label class="form-label">Cognome *</label><input type="text" class="form-input" placeholder="Rossi"></div>
+            <div class="form-group"><label class="form-label" for="cf-nome">Nome *</label><input id="cf-nome" name="nome" type="text" class="form-input" placeholder="Mario" autocomplete="given-name" required></div>
+            <div class="form-group"><label class="form-label" for="cf-cognome">Cognome *</label><input id="cf-cognome" name="cognome" type="text" class="form-input" placeholder="Rossi" autocomplete="family-name" required></div>
           </div>
-          <div class="form-group"><label class="form-label">Email aziendale *</label><input type="email" class="form-input" placeholder="mario.rossi@azienda.it"></div>
-          <div class="form-group"><label class="form-label">Azienda *</label><input type="text" class="form-input" placeholder="Nome dell'azienda"></div>
-          <div class="form-group"><label class="form-label">Area di interesse</label><select class="form-select"><option value="">Seleziona un'area</option><option>Consulenza IT</option><option>System Integration</option><option>Software Engineering</option><option>Cloud &amp; Infrastructure</option><option>Cybersecurity</option><option>AI &amp; Data Analytics</option><option>Blockchain &amp; Web3</option><option>Digital Marketing</option><option>Digital Transformation</option><option>Managed Services</option><option>Careers</option><option>Altro</option></select></div>
-          <div class="form-group"><label class="form-label">Messaggio</label><textarea class="form-textarea" placeholder="Descrivi brevemente il tuo progetto o la tua esigenza..."></textarea></div>
-          <button class="btn btn-primary" style="width:100%;justify-content:center;">Invia richiesta</button>
-          <p style="font-size:0.75rem;margin-top:14px;color: var(--text-light);">I dati forniti saranno trattati da Metis Technology S.p.A. ai sensi del GDPR 679/2016 per rispondere alla tua richiesta.</p>
+          <div class="form-group"><label class="form-label" for="cf-email">Email aziendale *</label><input id="cf-email" name="email" type="email" class="form-input" placeholder="mario.rossi@azienda.it" autocomplete="email" required></div>
+          <div class="form-group"><label class="form-label" for="cf-azienda">Azienda *</label><input id="cf-azienda" name="azienda" type="text" class="form-input" placeholder="Nome dell'azienda" autocomplete="organization" required></div>
+          <div class="form-group"><label class="form-label" for="cf-area">Area di interesse</label><select id="cf-area" name="area" class="form-select"><option value="">Seleziona un'area</option><option>Consulenza IT</option><option>System Integration</option><option>Software Engineering</option><option>Cloud &amp; Infrastructure</option><option>Cybersecurity</option><option>AI &amp; Data Analytics</option><option>Blockchain &amp; Web3</option><option>Digital Marketing</option><option>Digital Transformation</option><option>Managed Services</option><option>Careers</option><option>Altro</option></select></div>
+          <div class="form-group"><label class="form-label" for="cf-messaggio">Messaggio</label><textarea id="cf-messaggio" name="messaggio" class="form-textarea" placeholder="Descrivi brevemente il tuo progetto o la tua esigenza..."></textarea></div>
+          <!-- trappola per i bot: fuori schermo, le persone non la vedono e non la compilano -->
+          <div class="cf-hp" aria-hidden="true"><label for="cf-sito">Non compilare</label><input id="cf-sito" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Invia richiesta</button>
+          <p id="cf-stato" class="cf-stato" role="status" aria-live="polite"></p>
+          <p style="font-size:0.75rem;margin-top:14px;color: var(--text-light);">I dati forniti saranno trattati da Metis Technology S.p.A. esclusivamente per rispondere alla tua richiesta. <a href="#privacy" onclick="showPage('privacy');return false;" style="color:var(--blue);">Informativa privacy</a></p>
+        </form>
         </div>
         <div class="contact-sidebar">
           <div class="contact-info-item"><h4>Sede principale</h4><p>Via di Settebagni, 390<br>00138 Roma (RM)</p></div>
@@ -2454,7 +2591,7 @@
 <!-- ═══════════════════════════════════════ PRIVACY POLICY ═══ -->
 <main id="page-posizionamento" class="page">
   <section class="page-hero">
-    <div class="page-hero-img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1400&auto=format&fit=crop&q=80" alt="Posizionamento di mercato"></div>
+    <div class="page-hero-img"><img loading="lazy" decoding="async" src="assets/img/photo-1454165804606-c3d57bc86b40-w1400.jpg" alt="Posizionamento di mercato"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Posizionamento</span>
@@ -2542,56 +2679,57 @@
       <p class="lead">Informativa sul trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR).</p>
     </div>
   </section>
-  <section class="section">
+
+  <section class="section legal">
     <div class="container" style="max-width:860px;">
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">1. Titolare del trattamento</h2>
-        <p>Il titolare del trattamento è <strong style="color:var(--navy);font-weight:600;">Metis Technology S.p.A.</strong>, Via di Settebagni, 390 — 00138 Roma, P. IVA 13354331004.</p>
-        <p style="margin-top:12px;">Contatti: <a href="mailto:metistechnology@legalmail.it" style="color:var(--blue);">metistechnology@legalmail.it</a></p>
+      <div class="legal-sec">
+        <h2>1. Titolare del trattamento</h2>
+        <p>Il titolare del trattamento è <strong>Metis Technology S.p.A.</strong>, Via di Settebagni, 390 — 00138 Roma, P. IVA 13354331004.</p>
+        <p>Per qualsiasi richiesta sui tuoi dati puoi scrivere a <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>. Non è stato nominato un Responsabile della protezione dei dati (DPO).</p>
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">2. Dati raccolti</h2>
-        <div style="display:grid;gap:2px;">
-          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Dati di navigazione</strong><p style="font-size:0.88rem;margin:0;">Indirizzo IP, tipo di browser, sistema operativo, URL di provenienza, pagine visitate, orari di accesso. Raccolti automaticamente per garantire la sicurezza e il corretto funzionamento del sito.</p></div>
-          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Dati forniti volontariamente</strong><p style="font-size:0.88rem;margin:0;">Nome, cognome, indirizzo email, azienda e qualsiasi informazione inserita nei form di contatto.</p></div>
-          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Cookie</strong><p style="font-size:0.88rem;margin:0;">Si rimanda all'apposita <a href="#cookie" onclick="showPage('cookie');return false;" style="color:var(--blue);cursor:pointer;">Cookie Policy</a>.</p></div>
+      <div class="legal-sec">
+        <h2>2. Quali dati trattiamo</h2>
+        <div class="legal-grid">
+          <div class="legal-card"><strong>Dati di navigazione</strong><p>Quando visiti il sito, il fornitore di hosting registra l'indirizzo IP e i dati tecnici della richiesta, come browser, pagina richiesta, data e ora, per finalità di sicurezza. MetisT non usa questi dati per identificarti né per profilarti.</p></div>
+          <div class="legal-card"><strong>Dati che ci invii</strong><p>Nome, cognome, email aziendale, azienda, area di interesse e messaggio, quando ci contatti tramite il modulo o per email. Nome, cognome, email e azienda servono per risponderti; gli altri campi sono facoltativi.</p></div>
+          <div class="legal-card"><strong>Cookie e tracciamento</strong><p>Il sito non usa cookie né altri strumenti di tracciamento. I dettagli sono nella <a href="#cookie" onclick="showPage('cookie');return false;">Cookie Policy</a>.</p></div>
         </div>
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">3. Finalità e base giuridica</h2>
-        <div style="display:grid;gap:2px;">
-          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Gestione richieste di contatto</strong><p style="font-size:0.88rem;margin:0;">Base: esecuzione di misure precontrattuali (art. 6, par. 1, lett. b GDPR).</p></div>
-          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Navigazione sul sito</strong><p style="font-size:0.88rem;margin:0;">Base: legittimo interesse del titolare (art. 6, par. 1, lett. f GDPR).</p></div>
-          <div style="padding:24px 28px;background:var(--gray-50);border-left:3px solid var(--blue);"><strong style="color:var(--navy);display:block;margin-bottom:6px;">Adempimenti legali</strong><p style="font-size:0.88rem;margin:0;">Base: obbligo legale (art. 6, par. 1, lett. c GDPR).</p></div>
+      <div class="legal-sec">
+        <h2>3. Finalità e base giuridica</h2>
+        <div class="legal-grid">
+          <div class="legal-card"><strong>Rispondere alle richieste di contatto</strong><p>Base giuridica: misure precontrattuali adottate su tua richiesta (art. 6, par. 1, lett. b GDPR).</p></div>
+          <div class="legal-card"><strong>Sicurezza e funzionamento del sito</strong><p>Base giuridica: legittimo interesse del titolare a proteggere il sito da abusi e attacchi (art. 6, par. 1, lett. f GDPR).</p></div>
+          <div class="legal-card"><strong>Adempimenti di legge</strong><p>Base giuridica: obbligo legale (art. 6, par. 1, lett. c GDPR).</p></div>
         </div>
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">4. Conservazione dei dati</h2>
-        <p>I dati raccolti tramite il form di contatto sono conservati per un periodo non superiore a <strong style="color:var(--navy);">24 mesi</strong>. I dati di navigazione per un massimo di <strong style="color:var(--navy);">12 mesi</strong>.</p>
+      <div class="legal-sec">
+        <h2>4. Chi riceve i dati</h2>
+        <p>Il sito è ospitato da <strong>GitHub, Inc.</strong>, che tratta i dati di navigazione in qualità di responsabile del trattamento.</p>
+        <p>I dati delle richieste di contatto non sono comunicati ad altre società del Gruppo ATMH né ceduti a terzi per finalità commerciali.</p>
+        <!-- DA COMPLETARE all'attivazione del modulo contatti: nome e sede del fornitore del servizio di inoltro, accordo di nomina a responsabile (art. 28 GDPR) e garanzie per l'eventuale trasferimento fuori dall'UE nella sezione 5. -->
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">5. Diritti dell'interessato</h2>
-        <p style="margin-bottom:16px;">L'interessato può esercitare, in qualsiasi momento, i seguenti diritti:</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
-          <div style="padding:20px;background:var(--gray-50);"><h4 style="margin-bottom:4px;">Accesso</h4><p style="font-size:0.82rem;margin:0;">Ottenere conferma e copia dei dati trattati.</p></div>
-          <div style="padding:20px;background:var(--gray-50);"><h4 style="margin-bottom:4px;">Rettifica</h4><p style="font-size:0.82rem;margin:0;">Correggere dati inesatti o incompleti.</p></div>
-          <div style="padding:20px;background:var(--gray-50);"><h4 style="margin-bottom:4px;">Cancellazione</h4><p style="font-size:0.82rem;margin:0;">Richiedere la cancellazione dei propri dati.</p></div>
-          <div style="padding:20px;background:var(--gray-50);"><h4 style="margin-bottom:4px;">Limitazione</h4><p style="font-size:0.82rem;margin:0;">Limitare il trattamento in determinati casi.</p></div>
-          <div style="padding:20px;background:var(--gray-50);"><h4 style="margin-bottom:4px;">Portabilità</h4><p style="font-size:0.82rem;margin:0;">Ricevere i dati in formato leggibile.</p></div>
-          <div style="padding:20px;background:var(--gray-50);"><h4 style="margin-bottom:4px;">Opposizione</h4><p style="font-size:0.82rem;margin:0;">Opporsi al trattamento per legittimo interesse.</p></div>
+      <div class="legal-sec">
+        <h2>5. Trasferimento fuori dall'Unione europea</h2>
+        <p>GitHub, Inc. ha sede negli Stati Uniti. I trasferimenti avvengono sulla base delle clausole contrattuali standard approvate dalla Commissione europea (Decisione di esecuzione 2021/914) e dell'adesione di GitHub al Data Privacy Framework UE-USA, come indicato nell'<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">informativa di GitHub<span class="sr-only"> (si apre in una nuova scheda)</span></a>.</p>
+      </div>
+      <div class="legal-sec">
+        <h2>6. Per quanto tempo</h2>
+        <div class="legal-grid">
+          <div class="legal-card"><strong>Richieste di contatto</strong><p>Per il tempo necessario a gestire la richiesta, e comunque non oltre 24 mesi.</p></div>
+          <div class="legal-card"><strong>Dati di navigazione</strong><p>Conservati da GitHub per finalità di sicurezza, secondo i tempi indicati nella sua informativa.</p></div>
         </div>
-        <p style="margin-top:20px;">Per esercitare i diritti: <a href="mailto:metistechnology@legalmail.it" style="color:var(--blue);">metistechnology@legalmail.it</a>. È possibile proporre reclamo al <a href="https://www.garanteprivacy.it" target="_blank" style="color:var(--blue);">Garante per la protezione dei dati personali</a>.</p>
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">6. Trasferimento dei dati</h2>
-        <p>I dati non sono trasferiti a paesi terzi né ceduti a terzi per finalità commerciali. Possono essere comunicati a responsabili del trattamento (es. fornitori hosting) previa stipula di accordi ai sensi dell'art. 28 GDPR.</p>
+      <div class="legal-sec">
+        <h2>7. I tuoi diritti</h2>
+        <p>Puoi chiedere in ogni momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti al trattamento basato sul legittimo interesse (articoli 15-21 GDPR).</p>
+        <p>Per esercitare questi diritti scrivi a <a href="mailto:metistechnology@legalmail.it">metistechnology@legalmail.it</a>. Hai inoltre il diritto di proporre reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">Garante per la protezione dei dati personali<span class="sr-only"> (si apre in una nuova scheda)</span></a>.</p>
       </div>
-      <div style="padding:28px 32px;background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:0 4px 4px 0;">
-        <p style="font-size:0.88rem;color:var(--navy);margin:0;"><strong>Ultimo aggiornamento:</strong> 1° gennaio 2025.</p>
-      </div>
+      <p class="legal-agg">Ultimo aggiornamento: 11 settembre 2026.</p>
     </div>
   </section>
-    <footer>
+
+  <footer>
     <div class="container">
       <div class="footer-grid">
         <div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>
@@ -2655,73 +2793,36 @@
     <div class="page-hero-content">
       <span class="eyebrow" style="color:rgba(255,255,255,0.8);">Legale</span>
       <h1>Cookie Policy</h1>
-      <p class="lead">Informativa sull'utilizzo dei cookie ai sensi del Provvedimento del Garante dell'8 maggio 2014.</p>
+      <p class="lead">Informativa sull'uso di cookie e altri strumenti di tracciamento, secondo le Linee guida del Garante per la protezione dei dati personali del 10 giugno 2021.</p>
     </div>
   </section>
-  <section class="section">
+
+  <section class="section legal">
     <div class="container" style="max-width:860px;">
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">1. Cosa sono i cookie</h2>
-        <p>I cookie sono piccoli file di testo memorizzati sul dispositivo dell'utente durante la navigazione. Consentono al sito di ricordare azioni e preferenze per un periodo di tempo.</p>
+      <div class="legal-sec">
+        <h2>1. Il sito non usa cookie</h2>
+        <p>www.metist.it non installa cookie sul tuo dispositivo e non usa altri strumenti di tracciamento, come pixel, identificatori del dispositivo o archiviazione locale del browser.</p>
+        <p>Per questo non ti viene mostrato alcun banner: non c'è nulla a cui prestare consenso.</p>
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">2. Tipologie di cookie utilizzati</h2>
-        <div style="display:grid;gap:2px;margin-top:16px;">
-          <div style="padding:28px;background:var(--gray-50);border-left:3px solid var(--blue);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h3 style="font-size:1rem;">Cookie tecnici</h3><span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue);background:var(--blue-pale);padding:4px 12px;border-radius:2px;">Necessari</span></div>
-            <p style="font-size:0.88rem;margin:0;">Strettamente necessari per il corretto funzionamento del sito. Non richiedono consenso. Includono cookie di sessione e gestione della navigazione.</p>
-            <p style="font-size:0.82rem;color: var(--text-light);margin-top:8px;">Durata: sessione / fino a 12 mesi</p>
-          </div>
-          <div style="padding:28px;background:var(--gray-50);border-left:3px solid var(--gray-200);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h3 style="font-size:1rem;">Cookie analitici</h3><span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color: var(--text-light);background:var(--gray-100);padding:4px 12px;border-radius:2px;">Opzionali</span></div>
-            <p style="font-size:0.88rem;margin:0;">Raccolgono informazioni aggregate sul comportamento degli utenti per migliorare il sito. Richiedono consenso preventivo.</p>
-            <p style="font-size:0.82rem;color: var(--text-light);margin-top:8px;">Durata: fino a 26 mesi</p>
-          </div>
-          <div style="padding:28px;background:var(--gray-50);border-left:3px solid var(--gray-200);">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><h3 style="font-size:1rem;">Cookie di profilazione</h3><span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color: var(--text-light);background:var(--gray-100);padding:4px 12px;border-radius:2px;">Opzionali</span></div>
-            <p style="font-size:0.88rem;margin:0;">Tracciano la navigazione per mostrare contenuti in linea con gli interessi dell'utente. Richiedono consenso esplicito. Il sito attualmente non utilizza cookie di profilazione proprietari.</p>
-            <p style="font-size:0.82rem;color: var(--text-light);margin-top:8px;">Durata: variabile in base al fornitore</p>
-          </div>
-        </div>
+      <div class="legal-sec">
+        <h2>2. Nessun servizio di terze parti</h2>
+        <p>Font e immagini sono ospitati sul sito stesso. Navigando non viene contattato alcun servizio esterno di statistiche, pubblicità o social network.</p>
+        <p>L'unico soggetto esterno coinvolto è il fornitore di hosting, GitHub, che registra i dati tecnici delle richieste per finalità di sicurezza, come descritto nella <a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a>.</p>
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">3. Cookie di terze parti</h2>
-        <div style="border:1px solid var(--border);border-radius:4px;overflow:hidden;">
-          <div style="display:grid;grid-template-columns:2fr 2fr 1fr 1fr;background:var(--navy);padding:14px 20px;gap:10px;">
-            <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);">Servizio</span>
-            <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);">Finalità</span>
-            <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);">Tipo</span>
-            <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);">Info</span>
-          </div>
-          <div style="display:grid;grid-template-columns:2fr 2fr 1fr 1fr;padding:16px 20px;gap:10px;border-bottom:1px solid var(--border);">
-            <span style="font-size:0.88rem;font-weight:600;color:var(--navy);">Google Analytics</span>
-            <span style="font-size:0.85rem;color:var(--text-light);">Analisi traffico</span>
-            <span style="font-size:0.85rem;color:var(--text-light);">Analitico</span>
-            <a href="https://policies.google.com/privacy" target="_blank" style="font-size:0.82rem;color:var(--blue);">Policy →</a>
-          </div>
-          <div style="display:grid;grid-template-columns:2fr 2fr 1fr 1fr;padding:16px 20px;gap:10px;background:var(--gray-50);">
-            <span style="font-size:0.88rem;font-weight:600;color:var(--navy);">Google Fonts</span>
-            <span style="font-size:0.85rem;color:var(--text-light);">Caricamento font</span>
-            <span style="font-size:0.85rem;color:var(--text-light);">Tecnico</span>
-            <a href="https://policies.google.com/privacy" target="_blank" style="font-size:0.82rem;color:var(--blue);">Policy →</a>
-          </div>
-        </div>
+      <div class="legal-sec">
+        <h2>3. Se cambia qualcosa</h2>
+        <p>Se in futuro introdurremo strumenti di statistica o altri cookie non strettamente necessari, aggiorneremo questa informativa e ti chiederemo il consenso prima di attivarli.</p>
       </div>
-      <div style="margin-bottom:48px;">
-        <h2 style="font-size:1.6rem;margin-bottom:16px;">4. Come gestire i cookie</h2>
-        <p style="margin-bottom:20px;">È possibile gestire i cookie direttamente dalle impostazioni del browser. Si noti che disabilitare alcuni cookie potrebbe compromettere alcune funzionalità del sito.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;">
-          <a href="https://support.google.com/chrome/answer/95647" target="_blank" style="padding:20px 24px;background:var(--gray-50);display:block;color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;">Chrome →</a>
-          <a href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox" target="_blank" style="padding:20px 24px;background:var(--gray-50);display:block;color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;">Firefox →</a>
-          <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" style="padding:20px 24px;background:var(--gray-50);display:block;color:var(--navy);font-weight:600;font-size:0.9rem;text-decoration:none;">Safari →</a>
-        </div>
+      <div class="legal-sec">
+        <h2>4. Come gestire i cookie nel browser</h2>
+        <p>Puoi comunque controllare e cancellare i cookie di qualsiasi sito dalle impostazioni del browser:</p>
+        <p><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Chrome<span class="sr-only"> (si apre in una nuova scheda)</span></a> &nbsp;·&nbsp; <a href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox" target="_blank" rel="noopener noreferrer">Firefox<span class="sr-only"> (si apre in una nuova scheda)</span></a> &nbsp;·&nbsp; <a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari<span class="sr-only"> (si apre in una nuova scheda)</span></a></p>
       </div>
-      <div style="padding:28px 32px;background:var(--blue-pale);border-left:4px solid var(--blue);border-radius:0 4px 4px 0;">
-        <p style="font-size:0.88rem;color:var(--navy);margin:0;"><strong>Ultimo aggiornamento:</strong> 1° gennaio 2025. Per ulteriori informazioni consulta la <a href="#privacy" onclick="showPage('privacy');return false;" style="color:var(--blue);cursor:pointer;text-decoration:underline;">Privacy Policy</a>.</p>
-      </div>
+      <p class="legal-agg">Ultimo aggiornamento: 11 settembre 2026. Per il trattamento dei dati personali consulta la <a href="#privacy" onclick="showPage('privacy');return false;">Privacy Policy</a>.</p>
     </div>
   </section>
-    <footer>
+
+  <footer>
     <div class="container">
       <div class="footer-grid">
         <div><div class="footer-logo"><span class="fl-wordmark">Metis<span class="fl-t">T</span></span><span class="fl-sub">Metis Technology SpA <span aria-hidden="true">&middot;</span> Gruppo ATMH</span></div><p class="footer-tagline">Consulenza tecnologica e system integration per imprese enterprise.</p></div>
@@ -2883,6 +2984,38 @@
   } else {
     initNetwork();
   }
+})();
+</script>
+<script>
+/* Modulo contatti. L'invio passa da Formspree: incollare qui l'indirizzo del modulo
+   creato sull'account (formato https://formspree.io/f/xxxxxxxx). Finche' e' vuoto
+   il modulo non finge di inviare: mostra un contatto alternativo. */
+(function () {
+  var FORM_ENDPOINT = '';
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  var stato = document.getElementById('cf-stato');
+  var CONTATTO = 'metistechnology@legalmail.it';
+  function messaggio(testo, tipo) { stato.textContent = testo; stato.className = 'cf-stato' + (tipo ? ' ' + tipo : ''); }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var primo = null;
+    form.querySelectorAll('[required]').forEach(function (c) {
+      var v = c.value.trim();
+      var ok = v !== '' && (c.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      c.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      if (!ok && !primo) primo = c;
+    });
+    if (primo) { messaggio('Compila i campi obbligatori evidenziati.', 'err'); primo.focus(); return; }
+    if (!FORM_ENDPOINT) { messaggio('Il modulo non è ancora attivo. Scrivici a ' + CONTATTO + '.', 'err'); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; messaggio('Invio in corso…', '');
+    fetch(FORM_ENDPOINT, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset();
+        messaggio('Grazie, abbiamo ricevuto la tua richiesta. Ti risponderemo entro 24 ore lavorative.', 'ok'); })
+      .catch(function () { messaggio('Invio non riuscito. Riprova o scrivici a ' + CONTATTO + '.', 'err'); })
+      .then(function () { btn.disabled = false; });
+  });
 })();
 </script>
 </body>

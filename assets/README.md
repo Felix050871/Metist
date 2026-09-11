@@ -37,3 +37,15 @@ Sono ospitati qui invece che caricati da cdn.simpleicons.org perché quel CDN ha
 
 I marchi restano dei rispettivi titolari: AWS e Azure sono stati tolti da simple-icons su richiesta di Amazon e Microsoft. Se MetisT aderisce ai loro programmi partner, sostituite quei due file con i loghi ufficiali forniti dai programmi.
 
+## Font
+
+`fonts/` contiene DM Sans e DM Serif Display in WOFF2, solo i sottoinsiemi latin e latin-ext. Sono ospitati sul sito invece che caricati da Google Fonts: in questo modo l'indirizzo IP dei visitatori non viene trasmesso a Google. Le regole `@font-face` sono incorporate in `index.html`.
+
+Licenza SIL Open Font License: i testi sono in `OFL-dmsans.txt` e `OFL-dmserifdisplay.txt` e vanno tenuti insieme ai file dei font.
+
+## Foto
+
+`img/` contiene le 33 foto del sito, provenienti da Unsplash. Sono ospitate sul sito invece che caricate da images.unsplash.com: nessun IP dei visitatori viene trasmesso a Unsplash e nessuna foto può sparire perché rimossa dall'origine. Il nome del file riporta l'identificativo della foto su Unsplash e la larghezza.
+
+La licenza Unsplash consente l'uso gratuito, anche commerciale, senza obbligo di attribuzione.
+
