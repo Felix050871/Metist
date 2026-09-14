@@ -188,7 +188,7 @@
   #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--header-h); display: flex; align-items: center; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
   #site-header.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 24px rgba(6,24,47,0.06); }
   .header-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 40px; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 36px; }
-  .logo { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; cursor: pointer; flex-shrink: 0; text-decoration: none; border-radius: 3px; }
+  .logo { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; flex-shrink: 0; text-decoration: none; border-radius: 3px; }
   .logo:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
   .logo .logo-mark { height: 31px; width: auto; display: block; }
   .logo .logo-sub {
@@ -496,7 +496,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: #041426;
+    background: radial-gradient(ellipse 85% 75% at 50% 42%, #123C73 0%, #0B2A55 55%, #08213F 100%);
     padding-top: var(--header-h);
   }
   #matrixCanvas {
@@ -511,8 +511,8 @@
     inset: 0;
     z-index: 1;
     background:
-      radial-gradient(ellipse 75% 65% at 50% 50%, transparent 30%, rgba(4,20,38,0.70) 100%),
-      linear-gradient(180deg, rgba(4,20,38,0.55) 0%, rgba(4,20,38,0.0) 35%, rgba(4,20,38,0.0) 65%, rgba(4,20,38,0.90) 100%);
+      radial-gradient(ellipse 75% 65% at 50% 50%, transparent 35%, rgba(8,33,63,0.45) 100%),
+      linear-gradient(180deg, rgba(8,33,63,0.35) 0%, rgba(8,33,63,0.0) 35%, rgba(8,33,63,0.0) 70%, rgba(8,33,63,0.70) 100%);
   }
   .hero-matrix-content {
     position: relative;
@@ -533,18 +533,18 @@
   }
   .hm-line {
     width: 40px; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(10,70,172,0.8));
+    background: linear-gradient(90deg, transparent, rgba(0,152,240,0.9));
     display: inline-block;
   }
   .hm-line:last-child {
-    background: linear-gradient(90deg, rgba(10,70,172,0.8), transparent);
+    background: linear-gradient(90deg, rgba(0,152,240,0.9), transparent);
   }
   .hm-label {
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(79,179,255,0.85);
+    color: #8FCBFF;
   }
   .hero-matrix-title {
     font-family: var(--serif);
@@ -645,7 +645,7 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.72);
     font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -653,7 +653,7 @@
   }
   .hero-scroll-hint svg {
     width: 18px; height: 18px;
-    stroke: rgba(10,70,172,0.7);
+    stroke: rgba(255,255,255,0.6);
   }
   @keyframes hmBounce {
     0%,100% { transform: translateX(-50%) translateY(0); }
@@ -832,12 +832,22 @@
   }
 
   /* ===== Competenze dell'intero Gruppo ===== */
-  .group-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
-  .gc-cell { background: var(--white); padding: 28px 26px; }
-  .gc-cell h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 14px; letter-spacing: -0.005em; }
-  .gc-cell ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .gc-cell li { font-size: 0.92rem; line-height: 1.45; color: var(--text-light); padding-left: 16px; position: relative; }
-  .gc-cell li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 6px; height: 1px; background: var(--blue); }
+  .group-caps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .gc-cell { position: relative; background: var(--white); border: 1px solid #D3DCEA; border-radius: 6px; padding: 30px 26px 26px; overflow: hidden;
+             box-shadow: 0 1px 2px rgba(6,24,47,0.05), 0 10px 28px -12px rgba(6,24,47,0.16); transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+  .gc-cell::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: linear-gradient(90deg, var(--blue) 0%, var(--blue-bright) 100%); }
+  .gc-cell:hover { transform: translateY(-3px); border-color: #A9BEDD; box-shadow: 0 2px 4px rgba(6,24,47,0.06), 0 18px 36px -14px rgba(10,70,172,0.28); }
+  .gc-cell h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); letter-spacing: -0.005em; }
+  .gc-cell ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .gc-cell li { font-size: 0.92rem; line-height: 1.45; color: #2E3A4F; padding-left: 18px; position: relative; }
+  .gc-cell li::before { content: ''; position: absolute; left: 0; top: 0.5em; width: 7px; height: 7px; border-radius: 50%; background: var(--blue-bright); box-shadow: 0 0 0 3px var(--blue-pale); }
+  .gc-cell.gc-cta { background: var(--navy); border-color: var(--navy); display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+  .gc-cta .gc-cta-num { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--white); }
+  .gc-cta p { color: rgba(255,255,255,0.84); font-size: 0.95rem; line-height: 1.5; margin: 10px 0 0; }
+  .gc-cta a { align-self: flex-start; color: var(--white); font-weight: 600; font-size: 0.92rem; text-decoration: none; border-bottom: 1px solid var(--blue-bright); padding-bottom: 2px; border-radius: 2px; }
+  .gc-cta a:hover { color: #9CD6FF; }
+  .gc-cta a:focus-visible { outline: 2px solid var(--blue-bright); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .gc-cell { transition: none; } .gc-cell:hover { transform: none; } }
   @media (max-width: 1024px) { .group-caps { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px)  { .group-caps { grid-template-columns: 1fr; } }
 
@@ -1317,6 +1327,13 @@
             <li>Store &amp; Product Locator</li>
             <li>Fencing &amp; Proximity Marketing</li>
             <li>Indoor Navigation</li></ul>
+        </div>
+        <div class="gc-cell gc-cta">
+          <div>
+            <span class="gc-cta-num">11</span>
+            <p>aree specialistiche che il Gruppo ATMH mette a disposizione dei clienti MetisT, accanto ai nostri servizi.</p>
+          </div>
+          <a href="#gruppo" onclick="showPage('gruppo');return false;">Scopri il Gruppo <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </div>
